@@ -102,6 +102,143 @@
 
     // Start your code here
     // You may move this JS to another file if you wish
+
+    // 1. Console Log 
+    let consoleLogBtn = errorBtns[0];
+    consoleLogBtn.addEventListener('click', () => {
+      console.log('Console Log Button ');
+    });
+
+    // 2. Console Error
+    let consoleErrorBtn = errorBtns[1];
+    consoleErrorBtn.addEventListener('click', () => {
+      console.error('Console Error Button ');
+    });
+
+    // 3. Console Count
+    let consoleCountBtn = errorBtns[2];
+    consoleCountBtn.addEventListener('click', ()=> {
+      console.count('Console Count Button ');
+    });
+
+    // 4. Console Warn
+    let consoleWarnBtn = errorBtns[3];
+    consoleWarnBtn.addEventListener('click', () => {
+      console.warn('Console Warn Button');
+    });
+
+    // 5. Console Assert
+    let consoleAssertBtn = errorBtns[4];
+    consoleAssertBtn.addEventListener('click', () => {
+      let number = 2
+      let errorMsg = 'Assertion is Incorrect'
+      console.assert(number == 3, {number, errorMsg});
+    });
+
+    // 6. Console Clear 
+    let consoleClearBtn = errorBtns[5];
+    consoleClearBtn.addEventListener('click', () => {
+      console.clear();
+    });
+
+    // 7. Console Dir
+    let consoleDirBtn = errorBtns[6];
+    consoleDirBtn.addEventListener('click', () => {
+      let student = {
+        name: 'Prisha',
+        PID: 'A16838035',
+        age: 20,
+      }
+      console.dir(student);
+    });
+
+    // 8. Console Dirxml
+    let consoleDirxmlBtn = errorBtns[7];
+    consoleDirxmlBtn.addEventListener('click', () => {
+      let xmlStudent = '<person><name>Prisha</name><age>20</age></person>';
+      console.dirxml(xmlStudent);
+    });
+
+    // 9. Console Group Start 
+    let consoleGroupStartBtn = errorBtns[8];
+    consoleGroupStartBtn.addEventListener('click', () => {
+      console.log("This is the outer level");
+      console.group();
+      console.log("Level 2");
+      console.log("Level 3");
+      console.log("Level 4");
+    });
+
+    // 10. Console Group End
+    let consoleGroupEndBtn = errorBtns[9];
+    consoleGroupEndBtn.addEventListener('click', () => {
+      console.log("Back to level 2");
+      console.groupEnd();
+      console.log("Back to outer level");
+    });
+
+    // 11. Console Table
+    let consoleTableBtn = errorBtns[10];
+    consoleTableBtn.addEventListener('click', () => {
+      const info = [
+        ["Prisha", "Anand"],
+        ["Computer", "Science"],
+        ["June 04", "2023"],
+      ];
+      console.table(info);
+    });
+
+    // 12. Console Start Time
+    let consoleStartTimeBtn = errorBtns[11];
+    consoleStartTimeBtn.addEventListener('click', () => {
+      console.time();
+    });
+
+    // 13. Console End Time
+    let consoleEndTimeBtn = errorBtns[12];
+    consoleEndTimeBtn.addEventListener('click', () => {
+      console.timeEnd();
+    });
+
+    // 14. Console Trace
+    let consoleTraceBtn = errorBtns[13];
+    consoleTraceBtn.addEventListener('click', () => {
+      function foo() {
+        function bar() {
+          console.trace();
+        }
+        bar();
+      }
+      foo();
+    });
+
+    // 15. Console Global
+    let consoleGlobalBtn = errorBtns[14];
+    consoleGlobalBtn.addEventListener('click', () => {
+      //Try-Catch & Custom Throw
+      try {
+        function boundCheck() {
+          let i;
+          for (i = 1; i < 10; i++) {
+            i++;
+          }
+          i -= 5;
+          if (i > 0) {
+            throw new Error('Out of Bounds Element i');
+          }
+        }
+        boundCheck();
+      } catch (error) {
+        console.error('ERROR:', error);
+      } finally {
+        throw new Error('Global Error Thrown');
+      }
+    });
+
+    
+
+
+
   </script>
 </body>
 
